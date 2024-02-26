@@ -3,6 +3,6 @@ var builder = WebApplication.CreateBuilder(args);
 //L'istruzione successiva chiama il metodo Build sull'oggetto WebApplicationBuilder, restituendo un oggetto WebApplication. Questo oggetto rappresenta l'applicazione web ASP.NET Core in sé.
 var app = builder.Build();
 
-app.MapGet("/", () => "Karim Muffa!");
+app.MapGet("/", () => "Prova del primo commit!");
 
 app.Run();
