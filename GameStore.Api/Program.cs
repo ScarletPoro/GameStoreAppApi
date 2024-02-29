@@ -37,34 +37,44 @@ app.MapGet("games/{id}", (int id) => games.Find(game => game.id == id))
 
 // POST /games
 app.MapPost("games", (CreateGameDto newGame) =>
-{
-    GameDto game = new(
-        games.Count + 1,
-        newGame.Name,
-        newGame.Genre,
-        newGame.Price,
-        newGame.ReleaseDate);
+    {
+        GameDto game = new(
+            games.Count + 1,
+            newGame.Name,
+            newGame.Genre,
+            newGame.Price,
+            newGame.ReleaseDate);
 
-    games.Add(game);
+        games.Add(game);
 
-    return Results.CreatedAtRoute(GetGameEndpointName, new {id = game.id}, game);
+        return Results.CreatedAtRoute(GetGameEndpointName, new {id = game.id}, game);
 
-});
+    });
 
 //PUT /games
-app.MapPut("games/{id}", (int id, UpdateGameDto updatedGame)
-=>{
-    var index = games.FindIndex(game => game.id == id);
+app.MapPut("games/{id}", (int id, UpdateGameDto updatedGame) =>
+    {
+        var index = games.FindIndex(game => game.id == id);
 
-    games[index] = new GameDto(
-        id,
-        updatedGame.Name,
-        updatedGame.Genre,
-        updatedGame.Price,
-        updatedGame.ReleaseDate
-    );
+        games[index] = new GameDto(
+            id,
+            updatedGame.Name,
+            updatedGame.Genre,
+            updatedGame.Price,
+            updatedGame.ReleaseDate
+        );
 
-    return Results.NoContent();
-});
+        return Results.NoContent();
+    });
+
+// DELETE /games/1
+app.MapDelete("games/{id}", (int id) =>
+    {
+        //rimuovo dalla lista games tutti i game che hanno game.id uguale a id
+        games.RemoveAll(game => game.id == id);
+
+        return Results.NoContent();
+    });
+
 
 app.Run();
