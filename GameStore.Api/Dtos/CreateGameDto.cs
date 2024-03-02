@@ -2,9 +2,9 @@
 
 namespace GameStore.Api.Dtos;
 
-public record class CreateGameDto(   
-    [Required][StringLength(50, MinimumLength = 2)] string Name, 
-    [Required][StringLength(20, MinimumLength = 3)] string Genre, 
+public record class CreateGameDto(
+    [Required][StringLength(50)] string Name,
+    int GenreId,
     [Range(1, 100)] decimal Price,
     DateOnly ReleaseDate
 );

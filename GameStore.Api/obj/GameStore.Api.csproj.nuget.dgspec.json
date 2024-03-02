@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\wepek\\Development\\CProjects\\GameStore\\GameStore.Api\\GameStore.Api.csproj": {}
+    "C:\\Users\\wepek\\Development\\CProjects\\GameStore\\gamestore.api\\GameStore.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\wepek\\Development\\CProjects\\GameStore\\GameStore.Api\\GameStore.Api.csproj": {
+    "C:\\Users\\wepek\\Development\\CProjects\\GameStore\\gamestore.api\\GameStore.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wepek\\Development\\CProjects\\GameStore\\GameStore.Api\\GameStore.Api.csproj",
+        "projectUniqueName": "C:\\Users\\wepek\\Development\\CProjects\\GameStore\\gamestore.api\\GameStore.Api.csproj",
         "projectName": "GameStore.Api",
-        "projectPath": "C:\\Users\\wepek\\Development\\CProjects\\GameStore\\GameStore.Api\\GameStore.Api.csproj",
+        "projectPath": "C:\\Users\\wepek\\Development\\CProjects\\GameStore\\gamestore.api\\GameStore.Api.csproj",
         "packagesPath": "C:\\Users\\wepek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wepek\\Development\\CProjects\\GameStore\\GameStore.Api\\obj\\",
+        "outputPath": "C:\\Users\\wepek\\Development\\CProjects\\GameStore\\gamestore.api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\wepek\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,12 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[8.0.2, )"
